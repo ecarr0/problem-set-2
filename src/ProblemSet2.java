@@ -19,6 +19,7 @@ public class ProblemSet2 {
 	
 	public static void main (String[] args) {
 		ProblemSet2 ps2 = new ProblemSet2();
+		Scanner in  = new Scanner(System.in);
 		ps2.sayHello();
 		ps2.gradeMe();
 		ps2.groupUs();
@@ -36,28 +37,31 @@ public class ProblemSet2 {
 	
 	public void gradeMe() {
 		System.out.println("Enter your first homework grade : ");
-		double homework1 = in.nextDouble();
+		double homework1 = in.nextDouble() / 100;
 		System.out.println("Enter your second homework grade : ");
-		double homework2 = in.nextDouble();
+		double homework2 = in.nextDouble() / 100;
 		System.out.println("Enter your third homework grade : ");
-		double homework3 = in.nextDouble();
+		double homework3 = in.nextDouble() / 100;
 		double avgHomework = (homework1 + homework2 + homework3) / 3;
 		System.out.println("Enter your first quiz grade : ");
-		double quiz1 = in.nextDouble();
+		double quiz1 = in.nextDouble() / 100;
 		System.out.println("Enter your second quiz grade : ");
-		double quiz2 = in.nextDouble();
+		double quiz2 = in.nextDouble() / 100;
 		System.out.println("Enter your third quiz grade : ");
-		double quiz3 = in.nextDouble();
+		double quiz3 = in.nextDouble() / 100;
 		double avgQuiz = (quiz1 + quiz2 + quiz3) / 3;
 		System.out.println("Enter your first test grade : ");
-		double test1 = in.nextDouble();
+		double test1 = in.nextDouble() / 100;
 		System.out.println("Enter your second test grade : ");
-		double test2 = in.nextDouble();
+		double test2 = in.nextDouble() / 100;
 		System.out.println("Enter your third test grade : ");
-		double test3 = in.nextDouble();
+		double test3 = in.nextDouble() / 100;
 		double avgTest = (test1 + test2 + test3) / 3;
 		double finalScore = (avgHomework * 0.15) + (avgQuiz * 0.30) + (avgTest * 0.55);
-		System.out.println("Final Grade : " + finalScore + "%");
+		finalScore *= 100;
+		System.out.print("Final Grade : "); 
+		System.out.printf(" %.2f", finalScore);
+		System.out.println("%");
 	}
 	
 	public void groupUs() {
@@ -79,7 +83,6 @@ public class ProblemSet2 {
 		String firstName = in.nextLine();
 		System.out.println("Enter your last name : ");
 		String lastName = in.nextLine();
-		String fullName = firstName + " " + lastName;
 		System.out.println("Enter your grade : ");
 		int grade = in.nextInt();
 		System.out.println("Enter your age : ");
@@ -87,7 +90,7 @@ public class ProblemSet2 {
 		in.nextLine();
 		System.out.println("Enter your hometown : ");
 		String hometown = in.nextLine();
-		System.out.println("NAME\t : " + fullName + "\nGRADE\t : " + grade + "\nAGE\t : " + age + "\nHOMETOWN : " + hometown);
+		System.out.println("NAME\t : " + firstName + " " + lastName + "\nGRADE\t : " + grade + "\nAGE\t : " + age + "\nHOMETOWN : " + hometown);
 	}
 	
 	public void initials() {
@@ -98,7 +101,7 @@ public class ProblemSet2 {
 		System.out.println("Please enter your last name: ");
 		char lastName = in.nextLine().charAt(0);
 		
-		System.out.println("\nYour intials are " + firstName + middleName + lastName + ".\n");
+		System.out.println("\nYour initials are " + firstName + middleName + lastName + ".\n");
 		in.close();
 	}
 }
