@@ -19,7 +19,6 @@ public class ProblemSet2 {
 	
 	public static void main (String[] args) {
 		ProblemSet2 ps2 = new ProblemSet2();
-		Scanner in = new Scanner(System.in);
 		ps2.sayHello();
 		ps2.gradeMe();
 		ps2.groupUs();
